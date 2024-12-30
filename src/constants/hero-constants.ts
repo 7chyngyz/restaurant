@@ -1,1 +1,1 @@
-export const hero = [{}]
+// export const hero = [{}]
