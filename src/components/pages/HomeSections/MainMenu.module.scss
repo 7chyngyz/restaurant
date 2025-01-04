@@ -1,0 +1,249 @@
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.titleSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  h2 {
+    color: rgb(255, 255, 255);
+    font-family: Shalimar;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 0%;
+    @media (max-width: 768px) {
+      font-size: 32px;
+      letter-spacing: 0%;
+    }
+  }
+}
+
+.mainTitle {
+  font-family: "Lora";
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 61px;
+  letter-spacing: 0%;
+
+  margin-bottom: 0.5rem;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 37px;
+    letter-spacing: 0%;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.categories {
+  width: 100%;
+  height: 100%;
+  background-color: #1f2731;
+  @media (min-width: 768px) {
+    width: 40.3333%;
+  }
+}
+
+.categoryItem {
+  position: sticky;
+  padding: 1rem;
+  font-family: "Lora";
+  color: rgba(255, 255, 255, 0.588);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .pointer {
+    position: absolute;
+    width: 56px;
+    height: 1.7px;
+    background-color: rgba(255, 255, 255, 0.588);
+    left: clamp(230px, 32vw, 390px);
+    bottom: 30px;
+    @media (max-width: 835px) {
+      left: 250px;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .itemLine {
+    width: 80%;
+    height: 0.4px;
+    background-color: rgba(255, 255, 255, 0.588);
+    margin-top: 5px;
+  }
+  &.hoverCategory:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    .itemLine {
+      background-color: #ff3b3b;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 31px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}
+
+.activeCategory {
+  background-color: #ff3b3b;
+  color: #ffffff;
+  transition: 1.2s;
+}
+
+.menuItems {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 66.6667%;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+
+.menuItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  @media (max-width: 768px) {
+    display: none;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    .info {
+      width: 80%;
+    }
+  }
+}
+
+.itemName {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.588);
+  font-family: Lora;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 31px;
+  letter-spacing: 0%;
+}
+
+.itemDescription {
+  color: #b3b3b3;
+  max-width: 25rem;
+  color: rgb(255, 255, 255);
+  font-family: "League Spartan";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+.itemActions {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.itemPrice {
+  color: #ff3b3b;
+  margin-bottom: 0.5rem;
+  font-family: Lora;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.orderButton {
+  color: rgb(255, 255, 255);
+  font-family: Lora;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.9px solid rgba(255, 255, 255, 0.36);
+
+  &:hover {
+    color: #ff3b3b;
+    border-bottom: 1.9px solid #ff3b3b;
+  }
+}
+
+.viewMenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  width: 134px;
+  height: 1.4px;
+  background-color: #ff3b3b;
+  transition: all 0.3s ease;
+}
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  gap: 10px;
+  width: 190px;
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
+  &:hover {
+    .line {
+      background-color: white;
+      transition: all 0.3s ease;
+      width: 180px;
+    }
+    .viewMenuButton {
+      background-color: #ff3b3b;
+      color: #ffffff;
+    }
+  }
+}
+
+.viewMenuButton {
+  border: 2px solid #ff3b3b;
+  background-color: transparent;
+  color: #ff3b3b;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #ff3b3b;
+    color: #ffffff;
+  }
+}
