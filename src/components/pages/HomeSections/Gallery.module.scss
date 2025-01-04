@@ -1,0 +1,59 @@
+.Gallery {
+  padding-top: 86px;
+  .titleSection {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    h2 {
+      color: rgb(255, 255, 255);
+      font-family: Shalimar;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 0%;
+      @media (max-width: 768px) {
+        font-size: 32px;
+        letter-spacing: 0%;
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    overflow-y: hidden;
+    scrollbar-width: none;
+
+    @media (max-width: 769px) {
+      .largeImage {
+        width: 700px;
+        height: 424px;
+      }
+      .middleImage {
+        width: 400px;
+        height: 200px;
+      }
+      .smallImage {
+        width: 190px;
+        height: auto;
+      }
+    }
+
+    .imgBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .imgChildren {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}
