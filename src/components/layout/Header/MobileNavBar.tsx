@@ -24,9 +24,9 @@ const MobileNavBar = ({ closeNav, showNav }: Props) => {
             ></div>
             <div
                 className={`text-white ${navOpen} transform transition-all duration-500 delay-300
-         fixed flex flex-col justify-start h-full
-        w-[80%] sm:w-[60%] bg-[#1B2026] z-[10000]`}
+fixed flex flex-col justify-start min-h-screen w-[80%] sm:w-[60%] bg-[#1B2026] z-[10000]`}
             >
+
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-600">
                     <Link href="/">
                         <h1 className="text-2xl font-silkSerif">Restaurant</h1>

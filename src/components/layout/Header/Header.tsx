@@ -3,32 +3,16 @@ import { navlinks } from "@/constants/navlinks-constants";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { HiSearch } from "react-icons/hi";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface Props {
     openNav: () => void;
 }
 
 const Header = ({ openNav }: Props) => {
-    const [navBg, setNavBg] = useState<boolean>(false);
-
-    useEffect(() => {
-        const handler = () => {
-            if (window.scrollY >= 90) {
-                setNavBg(true);
-            }
-            if (window.scrollY < 90) {
-                setNavBg(false);
-            }
-        };
-        window.addEventListener("scroll", handler);
-
-        return () => {
-            window.removeEventListener("scroll", handler);
-        };
-    }, []);
+    const rout = useRouter()
     return (
-        <header className={`fixed ${navBg ? "bg-slate-800/80" : "bg-[#1B2026]"} h-[12vh] w-full transition-all duration-500`}>
+        <header className={"fixed bg-[#1B2026] h-[12vh] w-full transition-all duration-500 z-30 top-0"}>
             <div className="container mx-auto h-full px-4 sm:px-8">
                 <div className="flex items-center justify-between h-full">
                     <Link href="/">
@@ -46,6 +30,7 @@ const Header = ({ openNav }: Props) => {
                     <div className="flex items-center space-x-4">
                         <div className="relative hidden lg:block">
                             <input
+                                onClick={() => rout.push('/menu')}
                                 type="text"
                                 placeholder="Search"
                                 className="w-[150px] sm:w-[187px] h-[37px] bg-[#EF272C] outline-none rounded-lg pl-10 text-sm text-white placeholder-white"
@@ -60,11 +45,11 @@ const Header = ({ openNav }: Props) => {
                             className="w-8 h-8 cursor-pointer text-white lg:hidden"
                         />
                     </div>
-
                 </div>
             </div>
         </header>
     );
 };
+
 
 export default Header;

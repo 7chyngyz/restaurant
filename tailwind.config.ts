@@ -16,6 +16,7 @@ export default {
         spartan: ['var(--font-spartan)', 'sans-serif'],
         silkSerif: ['var(--font-silk-serif)', 'serif'],
         shalimar: ['var(--font-shalimar)', 'serif'],
+        italianCuisine: ['"Italian Cuisine"', 'serif'],
       },
     },
   },
