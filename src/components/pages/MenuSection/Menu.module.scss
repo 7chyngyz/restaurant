@@ -8,13 +8,103 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    a {
-      position: absolute;
-      top: 0;
-      left: 30px;
-      left: 36px;
-      font-size: 50px;
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      gap: 30px;
     }
+    .close {
+      position: absolute;
+      top: -40px;
+      left: 30px;
+      font-size: 40px;
+      z-index: 999;
+    }
+    // category
+
+    .categories {
+      width: 30%;
+      background-color: #1f2731;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        overflow-x: scroll;
+        scrollbar-width: none;
+      }
+    }
+
+    .categoryItem {
+      position: sticky;
+      padding: 1rem;
+      font-family: "Lora";
+      color: rgba(255, 255, 255, 0.588);
+      font-size: 24px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      @media (max-width: 768px) {
+        padding: 3px 6px;
+        border-radius: 4px;
+        background: rgb(0, 0, 0);
+        width: 116px;
+        height: 42px;
+        justify-content: center;
+        h4 {
+          width: 100px;
+          font-family: "League Spartan";
+          color: rgb(255, 255, 255);
+          font-size: 14px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .pointer {
+        position: absolute;
+        width: 56px;
+        height: 1.7px;
+        background-color: rgba(255, 255, 255, 0.588);
+        left: clamp(230px, 32vw, 390px);
+        bottom: 30px;
+        @media (max-width: 1100px) {
+          display: none;
+        }
+      }
+      .itemLine {
+        width: 80%;
+        height: 0.4px;
+        background-color: rgba(255, 255, 255, 0.588);
+        margin-top: 5px;
+      }
+      &.hoverCategory:hover {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        .itemLine {
+          background-color: #ff3b3b;
+        }
+      }
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 31px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+    }
+
+    .activeCategory {
+      background-color: #ff3b3b;
+      color: #ffffff;
+      transition: 1.2s;
+    }
+    // category
+
     .blockAll {
       width: 800px;
       display: flex;
