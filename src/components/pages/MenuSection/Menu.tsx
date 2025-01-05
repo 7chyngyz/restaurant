@@ -20,18 +20,11 @@ interface ImenuItems {
 
 const Menu = () => {
   const image = [ice, ice1, ice2, ice3, ice4, ice5];
-
   const menuItems: ImenuItems[] = menuData.map((item, idx) => ({
     ...item,
     img: image[idx % image.length].src,
   }));
-  console.log(
-    "🚀 ~ constmenuItems:ImenuItems[]=menuData.map ~ menuItems:",
-    menuItems
-  );
-
   const [modalWindow, setModalWindow] = useState<ImenuItems | null>(null);
-  console.log("🚀 ~ Menu ~ modalWindow:", modalWindow);
 
   return (
     <div className={scss.Menu}>
