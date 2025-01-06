@@ -59,9 +59,8 @@ const Menu = () => {
               <div
                 key={category.id}
                 onClick={() => handleCategoryClick(category.id)}
-                className={`${scss.categoryItem} ${
-                  category.id === menuID ? scss.activeCategory : ""
-                }`}
+                className={`${scss.categoryItem} ${category.id === menuID ? scss.activeCategory : ""
+                  }`}
               >
                 {category.id === menuID && (
                   <motion.div

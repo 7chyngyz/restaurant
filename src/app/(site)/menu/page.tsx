@@ -1,5 +1,14 @@
-import MenuPage from "@/components/pages/MenuPage";
+import Menu from "@/components/pages/MenuSection/Menu";
+import { Suspense } from "react";
 
-const page = () => <MenuPage />
 
-export default page;
+
+const Page = () => {
+    return (
+        <Suspense fallback={<div>Загрузка...</div>}>
+            <Menu />
+        </Suspense>
+    );
+};
+
+export default Page;
