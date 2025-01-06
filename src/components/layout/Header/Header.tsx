@@ -86,6 +86,7 @@ const Header = ({ openNav }: Props) => {
             <select
               value={language}
               onChange={handleLanguageChange}
+              onChange={(e) => handleLanguageChange(e)}
               className="hidden lg:block bg-transparent text-sm text-white border-none focus:outline-none"
             >
               <option value="en">EN</option>
