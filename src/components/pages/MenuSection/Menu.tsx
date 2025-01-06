@@ -16,6 +16,7 @@ interface ImenuItems {
   price: string;
   description: string;
   id: number;
+  // Штеукафсу
 }
 
 const Menu = () => {
