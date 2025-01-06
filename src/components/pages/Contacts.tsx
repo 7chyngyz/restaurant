@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import scss from "./Contacts.module.scss";
 import Image from "next/image";
@@ -7,34 +8,81 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { TfiEmail } from "react-icons/tfi";
 import { FaTelegramPlane } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { useLanguageStore } from "@/store/useLanguageStore";
 const Contacts = () => {
+  const { language } = useLanguageStore();
+
+  const translate = (key: string) => {
+    const translations: Record<"en" | "ru" | "kg", Record<string, string>> = {
+      en: {
+        visitRestaurant: "Visit Restaurant",
+        happyHours: "Join Us for Happy Hours",
+        neighborhood: "Your neighborhood",
+        address: "225$.Lake Ave.Suite 1150 Pasadena,CA 911101",
+        openingHours: "Opening hours:",
+        monThu: "Mon-Thu: 10:00 am - 01:00 am",
+        friSun: "Fri-Sun: 10:00 am - 02:00 am",
+        purchaseGiftCard: "Purchase gift card",
+        contactInfo: "Contact Info",
+        phone: "+771219900",
+        email: "motionweb312@gmail.com",
+      },
+      ru: {
+        visitRestaurant: "Посетите ресторан",
+        happyHours: "Присоединяйтесь к нам на счастливые часы",
+        neighborhood: "Ваш район",
+        address: "225$.Lake Ave.Suite 1150 Pasadena,CA 911101",
+        openingHours: "Часы работы:",
+        monThu: "Пн-Чт: 10:00 - 01:00",
+        friSun: "Пт-Вс: 10:00 - 02:00",
+        purchaseGiftCard: "Купить подарочную карту",
+        contactInfo: "Контактная информация",
+        phone: "+771219900",
+        email: "motionweb312@gmail.com",
+      },
+      kg: {
+        visitRestaurant: "Ресторанга келиңиз",
+        happyHours: "Көңүлдүү сааттарга кошулуңуз",
+        neighborhood: "Сиздин аймак",
+        address: "225$.Lake Ave.Suite 1150 Pasadena,CA 911101",
+        openingHours: "Иш мезгили:",
+        monThu: "Дүй-Шей: 10:00 - 01:00",
+        friSun: "Жума-Жек: 10:00 - 02:00",
+        purchaseGiftCard: "Подарок карта сатып алыңыз",
+        contactInfo: "Контакттык маалымат",
+        phone: "+771219900",
+        email: "motionweb312@gmail.com",
+      },
+    };
+
+    return translations[language]?.[key] || key;
+  };
+
   return (
-    <div className={scss.Contacts}>
+    <div id="contact" className={scss.Contacts}>
       <div className="container">
         <div className={scss.content}>
           <div className={scss.block1}>
             <div className={scss.text}>
               <Image src={frame} alt="frame" className={scss.img} />
-              <p>Visit Restaurant</p>
+              <p>{translate("visitRestaurant")}</p>
             </div>
             <h6>
-              Join Us for <br /> Happy Hours
+              {translate("happyHours")}
             </h6>
             <div className={scss.caption1}>
-              <p className={scss.text1}>Your neighborhood</p>
-              <p className={scss.text2}>
-                225$.Lake Ave.Suite 1150 <br /> Pasadena,CA 911101
-              </p>
+              <p className={scss.text1}>{translate("neighborhood")}</p>
+              <p className={scss.text2}>{translate("address")}</p>
             </div>
             <div className={scss.caption2}>
-              <p className={scss.text1}>Opening hours:</p>
-              <p className={scss.text2}>Mon-Thu: 10:00 am - 01:00 am</p>
-              <p className={scss.text2}>Fri-Sun: 10:00 am - 02:00 am</p>
+              <p className={scss.text1}>{translate("openingHours")}</p>
+              <p className={scss.text2}>{translate("monThu")}</p>
+              <p className={scss.text2}>{translate("friSun")}</p>
             </div>
             <div className={scss.btns}>
               <p className={scss.lineRigth}></p>
               <button>
-                <span>Purchase gift card</span>
+                <span>{translate("purchaseGiftCard")}</span>
                 <a>
                   <FiArrowRight />
                 </a>
@@ -44,14 +92,14 @@ const Contacts = () => {
           </div>
           <div className={scss.block2}>
             <div className={scss.blockText}>
-              <p>Contact Info</p>
+              <p>{translate("contactInfo")}</p>
               <a>
                 <BiSolidPhoneCall className={scss.icon} />
-                <span>+771219900</span>
+                <span>{translate("phone")}</span>
               </a>
               <a>
                 <TfiEmail className={scss.icon} />
-                <span>motionweb312@gmail.com</span>
+                <span>{translate("email")}</span>
               </a>
             </div>
             <div className={scss.maps}>
